@@ -64,4 +64,9 @@
     border: none;
   }
 
+  .feedback-stats{
+    display: flex;
+    justify-content: space-between;
+  }
+
   
