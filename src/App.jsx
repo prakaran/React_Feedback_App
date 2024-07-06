@@ -5,6 +5,9 @@ import FeedbackList from './components/FeedbackList'
 import FeedbackData from './data/FeedbackData.js'
 import FeedbackStats from './components/FeedbackStats.jsx'
 import FeedbackForm from './components/FeedbackForm.jsx'
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import AboutPage from './components/pages/AboutPage.jsx'
+import AboutIconLink from './components/AboutIconLink.jsx'
 
 
 
@@ -26,15 +29,24 @@ const App = () => {
     })
   }
   return (
-    <>
-      <Header />
-      <div className='container'>
-        <FeedbackForm addFeedback={addFeedback}/>
-        <FeedbackStats feedback={feedback}/>
-        <FeedbackList feedback={feedback} handleDelete = {deleteFeedback}/>
-      </div>
-    </>
-
+    <Router>
+        <Header />
+      <Routes>
+        <Route path='/' element = {
+          <>
+            <div className='container'>
+              <FeedbackForm addFeedback={addFeedback}/>
+              <FeedbackStats feedback={feedback}/>
+              <FeedbackList feedback={feedback} handleDelete = {deleteFeedback}/>
+            </div>  
+          </>
+        } />
+        <Route path='/about' element={
+          <AboutPage/>
+        }/>
+      </Routes>
+      <AboutIconLink/>
+    </Router>
   )
 }
 

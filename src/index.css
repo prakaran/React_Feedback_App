@@ -181,21 +181,24 @@
     text-align: center;
     color: rebeccapurple;
   }
-  
+  .about{
+    display: flex;
+    justify-content: center;
+  }
   .about-link {
-    position: absolute;
+    position: fixed;
     bottom: 20px;
-    right: 20px;
+    right: 25px;
     color: #fff;
     cursor: pointer;
   }
   
   .about-link a {
-    color: #fff;
+    color: #ff6a95;
   }
   
   .about-link a:hover {
-    color: #ff6a95;
+    color: #d90166;
   }
   
   .about h1 {
@@ -221,6 +224,13 @@
   
     .input-group input {
       width: 80%;
+    }
+    .about-link {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: #fff;
+      cursor: pointer;
     }
   }
   
